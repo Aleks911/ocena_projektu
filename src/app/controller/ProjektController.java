@@ -68,28 +68,27 @@ public class ProjektController {
     
     @FXML
     void deleteAction(MouseEvent event) {
-    	
     	try {
-    	    	id_selected = t_projekty.getSelectionModel().getSelectedItem().getId_p(); 
-    	    	}
-    	    	catch (Exception e) {
-    	    		Alert a = new Alert(AlertType.ERROR);
-    	        	a.setTitle("B³¹d");
-    	        	a.setHeaderText("B³¹d");
-    	        	a.setContentText("Aby usun¹æ rekord musisz go najpierw zaznaczyæ");
-    	        	a.showAndWait();
-    	    	}
-    	    	
-    	    	connection();
-    	    	try {
-    	    	ps = conn.prepareStatement("DELETE FROM ankieta WHERE id=?");
-    	    	ps.setInt(1, id_selected);
-    	    	ps.executeUpdate();
-    	    	}
-    	    	catch (SQLException e) {
-    	    		e.printStackTrace();
-    	    	}
-    	    	select();
+        	id_selected = t_projekty.getSelectionModel().getSelectedItem().getId_p(); 
+        	}
+        	catch (Exception e) {
+        		Alert a = new Alert(AlertType.ERROR);
+            	a.setTitle("B³¹d");
+            	a.setHeaderText("B³¹d");
+            	a.setContentText("Aby usun¹æ rekord musisz go najpierw zaznaczyæ");
+            	a.showAndWait();
+        	}
+        	
+        	connection();
+        	try {
+        	ps = conn.prepareStatement("DELETE FROM projekt WHERE id_p=?");
+        	ps.setInt(1, id_selected);
+        	ps.executeUpdate();
+        	}
+        	catch (SQLException e) {
+        		e.printStackTrace();
+        	}
+        	select();
 
     }
 
@@ -109,7 +108,8 @@ public class ProjektController {
     	dane.clear();
     	t_projekty.setItems(dane);
     	try {
-    	ResultSet rs = ps.executeQuery();
+    	ps = conn.prepareStatement("SELECT * FROM projekt;");
+        ResultSet rs = ps.executeQuery();
     	while(rs.next()) {
     			dane.add(new Projekt(
     					rs.getInt("id_p"),
@@ -125,6 +125,7 @@ public class ProjektController {
     	t_opis.setCellValueFactory(new PropertyValueFactory<Projekt,String>("opis"));
     	t_deadline.setCellValueFactory(new PropertyValueFactory<Projekt,String>("deadline"));
     	t_id_gr.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_gr"));
+    	
 //    	dodanie danych do tabeli view w postaci obiektu ObservableList
     	t_projekty.setItems(null);
     	t_projekty.setItems(dane);

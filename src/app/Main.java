@@ -16,7 +16,7 @@ public class Main extends Application {
 
 		
 		try {
-			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/ListaKursantowView.fxml"));
+			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/ProjektView.fxml"));
 			Scene scene = new Scene(parent);
 			stage.setScene(scene);
 			stage.setTitle("Projekty");
