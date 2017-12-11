@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import app.database.DBConnection;
+import app.database.DBConnector;
 import app.model.Projekt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -46,7 +46,7 @@ public class ProjektController {
     
   public ObservableList<Projekt> dane = FXCollections.observableArrayList();
   PreparedStatement ps;
-  DBConnection db;
+  DBConnector db;
   Connection conn;
   int id_selected;
     

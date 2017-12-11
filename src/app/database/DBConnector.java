@@ -4,13 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DBConnection {
+public class DBConnector {
 //	koniecznie klasa publiczna bo inaczej siê nie po³¹czymy 
 	
 	Connection conn;
 	
 	//tworzymy metodê 
-	public DBConnection() {
+	public DBConnector() {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 //			setAutoCommit(true);
@@ -22,7 +22,7 @@ public class DBConnection {
 //  dla ³adniejszego zapisu zmienne do danych logoawnia deklarujemy w String - CASE SENSITIVE!!!!!! piszemy z ma³ych
 //	metoda zwracaj¹ca biekt klasy connection
 	public Connection connInit() {
-		String url = "jdbc:mysql://localhost:3306/usersjdbc";
+		String url = "jdbc:mysql://localhost:3306/ocena_projektu";
 		String user = "root";
 		String pass = "W4rszt4T2017";
 		try {
