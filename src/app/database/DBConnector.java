@@ -24,7 +24,7 @@ public class DBConnector {
 	public Connection connInit() {
 		String url = "jdbc:mysql://localhost:3306/ocena_projektu";
 		String user = "root";
-		String pass = "W4rszt4T2017";
+		String pass = "Kurs2017";
 		try {
 		conn = DriverManager.getConnection(url, user, pass);
 		} catch (SQLException e) {

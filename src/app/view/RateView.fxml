@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.RateController">
+   <children>
+      <TableView fx:id="t_ocena" layoutX="30.0" layoutY="61.0" prefHeight="243.0" prefWidth="540.0">
+        <columns>
+          <TableColumn fx:id="t_id" minWidth="135.0" prefWidth="75.0" text="ID PROJEKTU" />
+          <TableColumn fx:id="t_topic" minWidth="135.0" prefWidth="75.0" text="TEMAT" />
+            <TableColumn fx:id="t_descr" minWidth="135.0" prefWidth="75.0" text="OPIS" />
+            <TableColumn fx:id="t_deadline" minWidth="135.0" prefWidth="75.0" text="DEAD LINE" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="25.0" layoutY="14.0" prefHeight="40.0" prefWidth="550.0" text="Projekty">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_add" layoutX="30.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#addAction" prefHeight="40.0" prefWidth="100.0" text="DODAJ OCENE" />
+      <Button fx:id="btn_return" layoutX="470.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#returnAction" prefHeight="40.0" prefWidth="100.0" text="POWRÓT" />
+   </children>
+</AnchorPane>
