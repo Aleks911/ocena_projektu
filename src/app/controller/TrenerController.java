@@ -40,7 +40,7 @@ public class TrenerController {
 		}
 		Scene scene = new Scene(parent);
 		logStage.setScene(scene);
-		logStage.setTitle("Sprzedawca - panel logowania");
+		logStage.setTitle("Grupy");
 		logStage.show();
 
     }
