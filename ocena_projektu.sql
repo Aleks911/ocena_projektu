@@ -36,3 +36,14 @@ FOREIGN KEY (id_p) REFERENCES projekt(id_p)
 );
 
 
+create table ocena(
+id_o int primary key auto_increment,
+id_p int,
+id_k int,
+data_od date,
+ocena varchar(1),
+FOREIGN KEY (id_p) REFERENCES projekt(id_p),
+FOREIGN KEY (id_k) REFERENCES kursant(id_k)
+);
+
+
