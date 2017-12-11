@@ -35,11 +35,9 @@ public class ProjektController {
     @FXML
     private TableColumn<Projekt, String> t_deadline;
 
-    
     @FXML
     private TableColumn<Projekt,Integer> t_id_gr;
-    
-    
+
     @FXML
     private Button btn_dodaj;
 
@@ -122,11 +120,11 @@ public class ProjektController {
     	}
     	
 //    	wpisujemy vartoœci do obiektów kolumn tabeli
-    	t_id_p.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_p") );
-    	t_temat.setCellValueFactory(new PropertyValueFactory<Projekt,String>("test") );
-    	t_opis.setCellValueFactory(new PropertyValueFactory<Projekt,String>("opis") );
-    	t_deadline.setCellValueFactory(new PropertyValueFactory<Projekt,String>("deadline") );
-    	t_id_gr.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_gr") );
+    	t_id_p.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_p"));
+    	t_temat.setCellValueFactory(new PropertyValueFactory<Projekt,String>("test"));
+    	t_opis.setCellValueFactory(new PropertyValueFactory<Projekt,String>("opis"));
+    	t_deadline.setCellValueFactory(new PropertyValueFactory<Projekt,String>("deadline"));
+    	t_id_gr.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_gr"));
 //    	dodanie danych do tabeli view w postaci obiektu ObservableList
     	t_projekty.setItems(null);
     	t_projekty.setItems(dane);

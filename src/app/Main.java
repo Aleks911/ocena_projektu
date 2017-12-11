@@ -16,7 +16,7 @@ public class Main extends Application {
 			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/ProjektView.fxml"));
 			Scene scene = new Scene(parent);
 			stage.setScene(scene);
-			stage.setTitle("Menu - Trenera");
+			stage.setTitle("Projekty");
 			stage.show();
 			
 		} catch (IOException e) {
