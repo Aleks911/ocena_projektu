@@ -49,7 +49,7 @@ public class TrenerController {
     void listakAction(MouseEvent event) {
     	Stage logStage = new Stage();
 		try {
-			parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/ListaView.fxml"));
+			parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/ListaKursantowView.fxml"));
 
 		} catch (IOException e) {
 			e.printStackTrace();

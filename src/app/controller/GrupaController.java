@@ -95,6 +95,18 @@ public class GrupaController {
 
 	@FXML
 	void wyswietlAction(MouseEvent event) {
+		Stage stage = new Stage();
+		try {
+			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/KursanciGrupaView.fxml"));
+			Scene scene = new Scene(parent);
+			stage.setScene(scene);
+			stage.setTitle("Lista Kursantów wg grup");
+			stage.show();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 
 	}
 
