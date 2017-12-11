@@ -1,4 +1,5 @@
 create database ocena_projektu;
+use ocena_projektu;
 
 create table logowanie(
 id_u int primary key auto_increment unique,
@@ -18,20 +19,22 @@ telefon varchar(9),
 gh_link varchar(50)
 );
 
-create table projekt (
-id_p  int primary key auto_increment unique,
-temat text,
-opis text,
-deadline date
-);
-
 
 create table grupa(
 id_gr int primary key auto_increment unique,
 nazwa_gr varchar(50),
-id_p int,
-FOREIGN KEY (id_p) REFERENCES projekt(id_p)
+id_p int
 );
+
+create table projekt (
+id_p  int primary key auto_increment unique,
+temat text,
+opis text,
+deadline date,
+id_gr int,
+FOREIGN KEY (id_gr) REFERENCES grupa(id_gr)
+);
+
 
 
 create table ocena(

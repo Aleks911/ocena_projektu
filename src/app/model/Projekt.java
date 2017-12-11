@@ -2,7 +2,7 @@ package app.model;
 
 public class Projekt {
 	
-	private int id_p;
+	private int id_p, id_gr;
 	private String temat, opis, deadline;
 	
 
@@ -10,7 +10,7 @@ public class Projekt {
 		super();
 	}
 
-	public Projekt(int id_p, String temat, String opis, String deadline) {
+	public Projekt(int id_p, String deadline, String temat, String opis, int id_gr) {
 		super();
 		this.id_p = id_p;
 		this.temat = temat;
@@ -24,6 +24,14 @@ public class Projekt {
 
 	public void setId_p(int id_p) {
 		this.id_p = id_p;
+	}
+
+	public int getId_gr() {
+		return id_gr;
+	}
+
+	public void setId_gr(int id_gr) {
+		this.id_gr = id_gr;
 	}
 
 	public String getTemat() {
@@ -52,8 +60,12 @@ public class Projekt {
 
 	@Override
 	public String toString() {
-		return "Projekt [id_p=" + id_p + ", temat=" + temat + ", opis=" + opis + ", deadline=" + deadline + "]";
+		return "Projekt [id_p=" + id_p + ", id_gr=" + id_gr + ", temat=" + temat + ", opis=" + opis + ", deadline="
+				+ deadline + "]";
 	}
-	  
-	
+
+
+
+
+
 }

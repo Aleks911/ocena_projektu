@@ -20,7 +20,8 @@
           <TableColumn fx:id="t_id_p" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="t_temat" prefWidth="155.0" text="Temat" />
             <TableColumn fx:id="t_opis" prefWidth="138.0" text="Opis" />
-            <TableColumn fx:id="t_deadline" minWidth="0.0" prefWidth="181.0" text="Deadline" />
+            <TableColumn fx:id="t_deadline" minWidth="0.0" prefWidth="102.0" text="Deadline" />
+            <TableColumn fx:id="t_id_gr" minWidth="0.0" prefWidth="102.0" text="Grupa" />
         </columns>
       </TableView>
       <Button fx:id="btn_dodaj" layoutX="29.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#addAction" text="Dodaj" />

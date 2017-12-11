@@ -14,6 +14,7 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage stage) {
+
 		try {
 			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/TrenerView.fxml"));
 			Scene scene = new Scene(parent);
@@ -22,8 +23,8 @@ public class Main extends Application {
 			stage.show();
 			
 		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
+	}
 	}
 	
 	public static void main(String[] args) {
