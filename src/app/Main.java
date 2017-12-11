@@ -14,10 +14,10 @@ public class Main extends Application {
 	public void start(Stage stage) {
 
 		try {
-			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/TrenerView.fxml"));
+			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/LoginView.fxml"));
 			Scene scene = new Scene(parent);
 			stage.setScene(scene);
-			stage.setTitle("Menu - Trenera");
+			stage.setTitle("Logowanie");
 			stage.show();
 			
 		} catch (IOException e) {
