@@ -1,6 +1,4 @@
 create database ocena_projektu;
-use projekty; 
-
 
 create table logowanie(
 id_u int primary key auto_increment unique,
