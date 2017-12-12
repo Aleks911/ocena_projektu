@@ -145,7 +145,7 @@ public class ProjektController {
     	
 //    	wpisujemy vartoœci do obiektów kolumn tabeli
     	t_id_p.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_p"));
-    	t_temat.setCellValueFactory(new PropertyValueFactory<Projekt,String>("temat"));
+    	t_temat.setCellValueFactory(new PropertyValueFactory<Projekt,String>("test"));
     	t_opis.setCellValueFactory(new PropertyValueFactory<Projekt,String>("opis"));
     	t_deadline.setCellValueFactory(new PropertyValueFactory<Projekt,String>("deadline"));
     	t_id_gr.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_gr"));
