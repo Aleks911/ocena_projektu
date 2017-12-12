@@ -10,6 +10,7 @@
    <children>
       <Label layoutX="28.0" layoutY="22.0" prefHeight="39.0" prefWidth="92.0" text="Dodaj projekt" />
       <Label layoutX="28.0" layoutY="61.0" prefHeight="39.0" prefWidth="92.0" text="Temat" />
+
       <Label layoutX="26.0" layoutY="152.0" prefHeight="39.0" prefWidth="92.0" text="Opis" />
       <Label layoutX="421.0" layoutY="61.0" prefHeight="39.0" prefWidth="92.0" text="Termin oddania" />
       <TextField fx:id="tf_temat" layoutX="26.0" layoutY="100.0" prefHeight="25.0" prefWidth="294.0" />
@@ -19,5 +20,6 @@
       <Button layoutX="421.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#actionClear" text="Wyczyść" />
       <Label layoutX="422.0" layoutY="152.0" prefHeight="39.0" prefWidth="92.0" text="Grupa" />
       <TextField fx:id="tf_grupa" layoutX="400.0" layoutY="200.0" />
+
    </children>
 </AnchorPane>

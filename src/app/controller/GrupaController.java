@@ -93,10 +93,7 @@ public class GrupaController {
 		}
 	}
 
-	@FXML
-	void wyswietlAction(MouseEvent event) {
-
-	}
+	
 
 	@FXML
 	void refreshAction(MouseEvent event) {

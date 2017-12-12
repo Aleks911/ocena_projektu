@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.GrupaController">
    <children>
       <Label alignment="CENTER" layoutX="92.0" layoutY="14.0" prefHeight="27.0" prefWidth="233.0" text="Grupy">
@@ -30,11 +29,6 @@
                </font>
             </Button>
             <Button fx:id="btn_usun" mnemonicParsing="false" onMouseClicked="#usunAction" prefHeight="40.0" prefWidth="178.0" text="usuń">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Button fx:id="btn_wyswietl" mnemonicParsing="false" onMouseClicked="#wyswietlAction" prefHeight="40.0" prefWidth="179.0" text="wyświetl listę kursantow">
                <font>
                   <Font size="14.0" />
                </font>

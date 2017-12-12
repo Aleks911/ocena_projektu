@@ -11,10 +11,14 @@ import app.model.Projekt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+<<<<<<< HEAD
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+=======
+import javafx.scene.Node;
+>>>>>>> b4a0b766ec6ad1907a61970d0825782607d3fd7f
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -67,6 +71,7 @@ public class ProjektController {
     @FXML
     void addAction(MouseEvent event) {
     	
+
       		try {
     			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/addProjektView.fxml"));
     			Scene scene = new Scene(parent);
@@ -81,6 +86,26 @@ public class ProjektController {
     
       		
       		
+
+    	if(!t_id_p.getText().equals("")) {
+        	DBConnector db = new DBConnector();
+        	Connection conn =db.connInit();
+        	try {
+    			ps = conn.prepareStatement("insert into projekt values (null, ?);");
+    			ps.setString(1, t_id_p.getText());
+    		} catch (SQLException e) {
+    			e.printStackTrace();
+    		}
+    	
+        	} else {
+        		Alert a = new Alert(AlertType.ERROR);
+    			a.setTitle("B³¹d dodawaniu grupy");
+    			a.setHeaderText("Nazwa grupy nie mo¿e byæ pusta");
+    			a.showAndWait();
+        	}
+
+    	
+
     }
 
     	

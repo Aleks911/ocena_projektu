@@ -32,9 +32,12 @@ public class AddgrController {
     	DBConnector db = new DBConnector();
     	Connection conn =db.connInit();
     	try {
-			ps = conn.prepareStatement("insert into grupa values  (null, ?);");
+			ps = conn.prepareStatement("insert into grupa values (null, ?);");
 			ps.setString(1, tf_nazwa_gr.getText());
+			//wykonanie zapytania do insertow i updateów
+			ps.executeUpdate();
 		} catch (SQLException e) {
+			System.out.println("blad");
 			e.printStackTrace();
 		}
 	
