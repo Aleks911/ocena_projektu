@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.ProjektController">
    <children>
       <Label layoutX="15.0" layoutY="3.0" prefHeight="36.0" prefWidth="100.0" text="Lista Projektów">
@@ -25,7 +24,7 @@
         </columns>
       </TableView>
       <Button fx:id="btn_dodaj" layoutX="29.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#addAction" text="Dodaj" />
-      <Button fx:id="btn_update" layoutX="95.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#editAction" text="Edytuj" />
-      <Button fx:id="btn_delete" layoutX="160.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#deleteAction" text="Usuń" />
+      <Button fx:id="btn_update" layoutX="228.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#editAction" opacity="0.0" text="Edytuj" />
+      <Button fx:id="btn_delete" layoutX="97.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#deleteAction" text="Usuń" />
    </children>
 </AnchorPane>

@@ -16,17 +16,10 @@ public class Main extends Application {
 	public void start(Stage stage) {
 
 		try {
-<<<<<<< HEAD
 			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/ProjektView.fxml"));
 			Scene scene = new Scene(parent);
 			stage.setScene(scene);
 			stage.setTitle("Projekty");
-=======
-			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/TrenerView.fxml"));
-			Scene scene = new Scene(parent);
-			stage.setScene(scene);
-			stage.setTitle("Menu - Trenera");
->>>>>>> e35fb1d1d02188f92523cf0db86fe27855f12e2d
 			stage.show();
 			
 		} catch (IOException e) {
@@ -38,3 +31,4 @@ public class Main extends Application {
 		launch(args);
 	}
 }
+

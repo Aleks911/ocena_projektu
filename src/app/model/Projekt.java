@@ -9,7 +9,7 @@ public class Projekt {
 	public Projekt() {
 	}
 
-	public Projekt(int id_p, String deadline, String temat, String opis, int id_gr) {
+	public Projekt(int id_p, String temat, String opis , String deadline, int id_gr) {
 		this.id_p = id_p;
 		this.temat = temat;
 		this.opis = opis;

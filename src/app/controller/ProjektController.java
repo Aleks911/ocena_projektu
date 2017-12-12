@@ -1,5 +1,6 @@
 package app.controller;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,6 +11,10 @@ import app.model.Projekt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -17,6 +22,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class ProjektController {
 
@@ -53,15 +59,56 @@ public class ProjektController {
   PreparedStatement ps;
   DBConnector db;
   Connection conn;
+  Stage stage;
   int id_selected;
     
     
     
     @FXML
     void addAction(MouseEvent event) {
+    	
+      		try {
+    			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/addProjektView.fxml"));
+    			Scene scene = new Scene(parent);
+    			stage.setScene(scene);
+    			stage.setTitle("Dodaj projekt");
+
+    			stage.show();
+    			
+    		} catch (IOException e) {
+    			e.printStackTrace();
+    	}
+    
+      		
+      		
     }
 
-    
+    	
+    	
+    	
+//    	if(!t_id_p.getText().equals("")) {
+//        	DBConnector db = new DBConnector();
+//        	Connection conn =db.connInit();
+//        	try {
+//    			ps = conn.prepareStatement("insert into projekt values (null, ?);");
+//    			ps.setString(1, t_id_p.getText());
+//    		} catch (SQLException e) {
+//    			e.printStackTrace();
+//    		}
+//    	
+//        	} else {
+//        		Alert a = new Alert(AlertType.ERROR);
+//    			a.setTitle("B³¹d dodawaniu grupy");
+//    			a.setHeaderText("Nazwa grupy nie mo¿e byæ pusta");
+//    			a.showAndWait();
+//        	}
+
+    	
+    	
+    	
+    	
+    	
+  
     
     
     
@@ -121,7 +168,7 @@ public class ProjektController {
     	
 //    	wpisujemy vartoœci do obiektów kolumn tabeli
     	t_id_p.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_p"));
-    	t_temat.setCellValueFactory(new PropertyValueFactory<Projekt,String>("test"));
+    	t_temat.setCellValueFactory(new PropertyValueFactory<Projekt,String>("temat"));
     	t_opis.setCellValueFactory(new PropertyValueFactory<Projekt,String>("opis"));
     	t_deadline.setCellValueFactory(new PropertyValueFactory<Projekt,String>("deadline"));
     	t_id_gr.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_gr"));
@@ -140,6 +187,12 @@ public class ProjektController {
     
     public void initialize() {
     	select();
+    }
+    
+    
+    @FXML
+    void closegrAction(MouseEvent event) {
+    	((Node)(event.getSource())).getScene().getWindow().hide();
     }
     
 
