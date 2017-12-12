@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import app.database.DBConnector;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,36 +16,40 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class LoginController {
+public class logController {
 
     @FXML
     private TextField tf_login;
 
     @FXML
-    private PasswordField pf_login;
+    private PasswordField tf_pass;
 
     @FXML
     private Button btn_login;
-
-    @FXML
+    
     DBConnector db;
     PreparedStatement ps;
     Parent parent;
-    
+    // stworzyæ zmienn¹ statyczn¹, która przechowuje dane id_k
+    static int id_k;
+
+    @FXML
     void loginAction(MouseEvent event) {
     	db = new DBConnector();
 		Connection conn = db.connInit();
+		
 		try {
-			ps = conn.prepareStatement("select permission from logowanie where login=? and haslo=?;");
+			ps = conn.prepareStatement("select permission, id_k from logowanie where login=? and haslo=?;");
 			ps.setString(1, tf_login.getText());
-			ps.setString(2, pf_login.getText());
+			ps.setString(2, tf_pass.getText());
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				if (rs.getString("permission").equals("1")) {
+				String perm = rs.getString("permission");
+				id_k = rs.getInt("id_k");
+				if (perm.equals("1")) {
 					Stage stageUser = new Stage();
 					
 					try {
@@ -81,11 +86,6 @@ public class LoginController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
-    }
-
-    @FXML
-    void loginKeyAction(KeyEvent event) {
 
     }
 

@@ -10,6 +10,7 @@ import app.model.Projekt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -35,11 +36,9 @@ public class ProjektController {
     @FXML
     private TableColumn<Projekt, String> t_deadline;
 
-    
     @FXML
     private TableColumn<Projekt,Integer> t_id_gr;
-    
-    
+
     @FXML
     private Button btn_dodaj;
 
@@ -61,6 +60,29 @@ public class ProjektController {
     
     @FXML
     void addAction(MouseEvent event) {
+    	
+    	if(!t_id_p.getText().equals("")) {
+        	DBConnector db = new DBConnector();
+        	Connection conn =db.connInit();
+        	try {
+    			ps = conn.prepareStatement("insert into projekt values (null, ?);");
+    			ps.setString(1, t_id_p.getText());
+    		} catch (SQLException e) {
+    			e.printStackTrace();
+    		}
+    	
+        	} else {
+        		Alert a = new Alert(AlertType.ERROR);
+    			a.setTitle("B³¹d dodawaniu grupy");
+    			a.setHeaderText("Nazwa grupy nie mo¿e byæ pusta");
+    			a.showAndWait();
+        	}
+
+    	
+    	
+    	
+    	
+    	
     }
 
     
@@ -70,28 +92,27 @@ public class ProjektController {
     
     @FXML
     void deleteAction(MouseEvent event) {
-    	
     	try {
-    	    	id_selected = t_projekty.getSelectionModel().getSelectedItem().getId_p(); 
-    	    	}
-    	    	catch (Exception e) {
-    	    		Alert a = new Alert(AlertType.ERROR);
-    	        	a.setTitle("B³¹d");
-    	        	a.setHeaderText("B³¹d");
-    	        	a.setContentText("Aby usun¹æ rekord musisz go najpierw zaznaczyæ");
-    	        	a.showAndWait();
-    	    	}
-    	    	
-    	    	connection();
-    	    	try {
-    	    	ps = conn.prepareStatement("DELETE FROM ankieta WHERE id=?");
-    	    	ps.setInt(1, id_selected);
-    	    	ps.executeUpdate();
-    	    	}
-    	    	catch (SQLException e) {
-    	    		e.printStackTrace();
-    	    	}
-    	    	select();
+        	id_selected = t_projekty.getSelectionModel().getSelectedItem().getId_p(); 
+        	}
+        	catch (Exception e) {
+        		Alert a = new Alert(AlertType.ERROR);
+            	a.setTitle("B³¹d");
+            	a.setHeaderText("B³¹d");
+            	a.setContentText("Aby usun¹æ rekord musisz go najpierw zaznaczyæ");
+            	a.showAndWait();
+        	}
+        	
+        	connection();
+        	try {
+        	ps = conn.prepareStatement("DELETE FROM projekt WHERE id_p=?");
+        	ps.setInt(1, id_selected);
+        	ps.executeUpdate();
+        	}
+        	catch (SQLException e) {
+        		e.printStackTrace();
+        	}
+        	select();
 
     }
 
@@ -111,7 +132,8 @@ public class ProjektController {
     	dane.clear();
     	t_projekty.setItems(dane);
     	try {
-    	ResultSet rs = ps.executeQuery();
+    	ps = conn.prepareStatement("SELECT * FROM projekt;");
+        ResultSet rs = ps.executeQuery();
     	while(rs.next()) {
     			dane.add(new Projekt(
     					rs.getInt("id_p"),
@@ -122,11 +144,12 @@ public class ProjektController {
     	}
     	
 //    	wpisujemy vartoœci do obiektów kolumn tabeli
-    	t_id_p.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_p") );
-    	t_temat.setCellValueFactory(new PropertyValueFactory<Projekt,String>("test") );
-    	t_opis.setCellValueFactory(new PropertyValueFactory<Projekt,String>("opis") );
-    	t_deadline.setCellValueFactory(new PropertyValueFactory<Projekt,String>("deadline") );
-    	t_id_gr.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_gr") );
+    	t_id_p.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_p"));
+    	t_temat.setCellValueFactory(new PropertyValueFactory<Projekt,String>("temat"));
+    	t_opis.setCellValueFactory(new PropertyValueFactory<Projekt,String>("opis"));
+    	t_deadline.setCellValueFactory(new PropertyValueFactory<Projekt,String>("deadline"));
+    	t_id_gr.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_gr"));
+    	
 //    	dodanie danych do tabeli view w postaci obiektu ObservableList
     	t_projekty.setItems(null);
     	t_projekty.setItems(dane);
@@ -141,6 +164,12 @@ public class ProjektController {
     
     public void initialize() {
     	select();
+    }
+    
+    
+    @FXML
+    void closegrAction(MouseEvent event) {
+    	((Node)(event.getSource())).getScene().getWindow().hide();
     }
     
 

@@ -7,15 +7,14 @@ public class Projekt {
 	
 
 	public Projekt() {
-		super();
 	}
 
-	public Projekt(int id_p, String deadline, String temat, String opis, int id_gr) {
-		super();
+	public Projekt(int id_p, String temat, String opis , String deadline, int id_gr) {
 		this.id_p = id_p;
 		this.temat = temat;
 		this.opis = opis;
 		this.deadline = deadline;
+		this.id_gr = id_gr;
 	}
 
 	public int getId_p() {

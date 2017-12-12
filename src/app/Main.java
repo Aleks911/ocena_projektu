@@ -14,7 +14,7 @@ public class Main extends Application {
 	public void start(Stage stage) {
 
 		try {
-			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/LoginView.fxml"));
+			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/logView.fxml"));
 			Scene scene = new Scene(parent);
 			stage.setScene(scene);
 			stage.setTitle("Logowanie");
