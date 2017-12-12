@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import app.database.DBConnector;
 import app.model.Kursanci;
-import app.view.OcenaProjekt;
+import app.model.OcenaProjekt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

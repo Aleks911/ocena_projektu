@@ -1,3 +1,5 @@
 /bin/
 
 src/app/database/DBConnector.java
+
+.classpath

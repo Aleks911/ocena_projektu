@@ -1,4 +1,4 @@
-package app.view;
+package app.model;
 
 public class OcenaProjekt {
 	
