@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.ProjektController">
    <children>
       <Label layoutX="15.0" layoutY="3.0" prefHeight="36.0" prefWidth="100.0" text="Lista Projektów">
@@ -15,7 +14,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="t_projekty" layoutX="5.0" layoutY="47.0" prefHeight="200.0" prefWidth="589.0">
+      <TableView fx:id="t_projekty" layoutX="5.0" layoutY="47.0" maxWidth="1.7976931348623157E308" prefHeight="270.0" prefWidth="589.0">
         <columns>
           <TableColumn fx:id="t_id_p" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="t_temat" prefWidth="155.0" text="Temat" />
@@ -24,8 +23,9 @@
             <TableColumn fx:id="t_id_gr" minWidth="0.0" prefWidth="102.0" text="Grupa" />
         </columns>
       </TableView>
-      <Button fx:id="btn_dodaj" layoutX="29.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#addAction" text="Dodaj" />
-      <Button fx:id="btn_update" layoutX="95.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#editAction" text="Edytuj" />
-      <Button fx:id="btn_delete" layoutX="160.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#deleteAction" text="Usuń" />
+      <Button fx:id="btn_dodaj" layoutX="10.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#addAction" text="Dodaj" />
+      <Button fx:id="btn_refresh" layoutX="72.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#refreshAction" text="Odśwież" />
+      <Button fx:id="btn_delete" layoutX="147.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#deleteAction" text="Usuń" />
+      <Button fx:id="btn_logout" layoutX="531.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#logoutAction" text="Powrót" />
    </children>
 </AnchorPane>

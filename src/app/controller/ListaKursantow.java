@@ -71,14 +71,40 @@ public class ListaKursantow {
 		((Node)(event.getSource())).getScene().getWindow().hide();
     }
     
-
+    static int id_selected;
+    
     @FXML
-    void correctAction(MouseEvent event) {
+    void correctAction(MouseEvent event) throws IOException {
+    	id_selected = t_kursanci.getSelectionModel().getSelectedItem().getId_k();
+    	System.out.println(id_selected);
+    	Stage stage = new Stage();
+    	Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/EdytowanieKursantowView.fxml"));
+		Scene scene = new Scene(parent);
+		stage.setScene(scene);
+		stage.setTitle("Ocena Kursantów");
+		stage.show();
+		((Node)(event.getSource())).getScene().getWindow().hide();
 
     }
 
     @FXML
-    void deleteAction(MouseEvent event) {
+    void deleteAction(MouseEvent event) throws SQLException, IOException {
+    	
+    	id_selected = t_kursanci.getSelectionModel().getSelectedItem().getId_k();
+    	System.out.println(id_selected);
+    	DBConnector db = new DBConnector();
+    	conn = db.connInit();
+    	System.out.println(id_selected);
+    	ps = conn.prepareStatement("delete from kursant where id_k=?");
+    	ps.setInt(1, ListaKursantow.id_selected);			
+		ps.executeUpdate();
+		Stage stage = new Stage();
+    	Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/ListaKursantowView.fxml"));
+		Scene scene = new Scene(parent);
+		stage.setScene(scene);
+		stage.setTitle("Lista Kursantów");
+		stage.show();
+		((Node)(event.getSource())).getScene().getWindow().hide();	
 
     }
 
@@ -101,7 +127,7 @@ public class ListaKursantow {
     	try {
 			listaK = FXCollections.observableArrayList();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
     	while(rs.next()) {
