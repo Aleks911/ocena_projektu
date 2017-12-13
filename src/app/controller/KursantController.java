@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import app.database.DBConnector;
 import app.model.Kursanci;
+import app.model.OcenaProjekt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -104,7 +105,6 @@ public class KursantController {
     			ps = conn.prepareStatement("UPDATE ocena SET data_od = ? WHERE id_p = ?;");
     			ps.setString(1, tf_data.getText());
     			ps.setInt(2, id_selected);
-    			//wykonanie zapytania do insertow i updateów
     			ps.executeUpdate();
     		} catch (SQLException e) {
     			System.out.println("blad");

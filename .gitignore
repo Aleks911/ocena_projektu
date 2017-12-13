@@ -1,7 +1,13 @@
 /bin/
 
+<<<<<<< HEAD
 src/app/database/DBConnector.java 
 .classpath
 .project
 
 
+=======
+src/app/database/DBConnector.java
+
+.classpath
+>>>>>>> 557ab9d4e0ffcc1f3a82c204b4edfc7346444043

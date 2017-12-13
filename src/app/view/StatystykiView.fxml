@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.StatystykiController">
+   <children>
+      <Label alignment="CENTER" layoutX="226.0" layoutY="14.0" prefHeight="27.0" prefWidth="291.0" text="Statystyki">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="t_statystyki" layoutX="32.0" layoutY="42.0" prefHeight="265.0" prefWidth="679.0">
+        <columns>
+          <TableColumn fx:id="t_id_k" prefWidth="38.0" text="id_k" />
+          <TableColumn fx:id="t_imie" prefWidth="78.0" text="imię" />
+            <TableColumn fx:id="t_nazwisko" prefWidth="78.0" text="nazwisko" />
+            <TableColumn fx:id="t_id_p" prefWidth="40.0" text="id_p" />
+            <TableColumn fx:id="t_temat" prefWidth="116.0" text="temat" />
+            <TableColumn fx:id="t_deadline" prefWidth="99.0" text="termin oddania" />
+            <TableColumn fx:id="t_id_gr" prefWidth="40.0" text="id_gr" />
+            <TableColumn fx:id="t_data_od" prefWidth="94.0" text="data oddania" />
+            <TableColumn fx:id="t_ocena" prefWidth="94.0" text="ocena" />
+        </columns>
+      </TableView>
+      <Button fx:id="btn_all" layoutX="32.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#allAction" prefHeight="27.0" prefWidth="171.0" text="Wyświetl wszytskie projekty" />
+      <Button fx:id="btn_kursant" layoutX="32.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#kursantAction" prefHeight="27.0" prefWidth="171.0" text="Wyświetl projekty kursanta" />
+      <TextField fx:id="tf_kursant" layoutX="211.0" layoutY="375.0" prefHeight="27.0" prefWidth="61.0" />
+      <Button fx:id="btn_grupy" layoutX="32.0" layoutY="414.0" mnemonicParsing="false" onMouseClicked="#grupaAction" prefHeight="27.0" prefWidth="171.0" text="Wyświetl projekty grupy" />
+      <TextField fx:id="tf_grupy" layoutX="211.0" layoutY="414.0" prefHeight="27.0" prefWidth="61.0" />
+      <Button fx:id="btn_b_oceny" layoutX="32.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#ocenaAction" prefHeight="27.0" prefWidth="239.0" text="Wyświetl oddane i nieocenione projekty" />
+   </children>
+</AnchorPane>

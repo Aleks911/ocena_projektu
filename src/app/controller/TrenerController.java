@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -82,17 +83,7 @@ public class TrenerController {
 
     @FXML
     void logoutAction(MouseEvent event) {
-    	Stage logStage = new Stage();
-		try {
-			parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/LoginView.fxml"));
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		Scene scene = new Scene(parent);
-		logStage.setScene(scene);
-		logStage.setTitle("Panel logowania");
-		logStage.show();
+    	((Node)(event.getSource())).getScene().getWindow().hide();
 
     }
 
