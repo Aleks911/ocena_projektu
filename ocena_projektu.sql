@@ -7,7 +7,7 @@ create table kursant(
 id_k int primary key auto_increment unique,
 imie varchar(50) not null,
 nazwisko varchar(50),
-id_gr varchar(30),
+id_g varchar(30),
 email varchar(30) not null unique,
 telefon varchar(9),
 gh_link varchar(50)

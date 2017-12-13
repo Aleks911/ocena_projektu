@@ -6,20 +6,21 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="add.controller.addProjektController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.AddProjektController">
    <children>
       <Label layoutX="28.0" layoutY="22.0" prefHeight="39.0" prefWidth="92.0" text="Dodaj projekt" />
       <Label layoutX="28.0" layoutY="61.0" prefHeight="39.0" prefWidth="92.0" text="Temat" />
+      <TextField fx:id="tf_temat" layoutX="26.0" layoutY="100.0" prefHeight="25.0" prefWidth="294.0" />
 
       <Label layoutX="26.0" layoutY="152.0" prefHeight="39.0" prefWidth="92.0" text="Opis" />
+      <TextArea fx:id="ta_opis" layoutX="26.0" layoutY="200.0" prefHeight="124.0" prefWidth="294.0" />
       <Label layoutX="421.0" layoutY="61.0" prefHeight="39.0" prefWidth="92.0" text="Termin oddania" />
-      <TextField fx:id="tf_temat" layoutX="26.0" layoutY="100.0" prefHeight="25.0" prefWidth="294.0" />
-      <TextArea fx:id="ta_opis" layoutX="26.0" layoutY="200.0" prefHeight="137.0" prefWidth="294.0" />
       <TextField fx:id="tf_deadline" layoutX="393.0" layoutY="100.0" />
-      <Button layoutX="495.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#actionInsert" prefHeight="25.0" prefWidth="70.0" text="Dodaj" />
-      <Button layoutX="421.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#actionClear" text="Wyczyść" />
       <Label layoutX="422.0" layoutY="152.0" prefHeight="39.0" prefWidth="92.0" text="Grupa" />
       <TextField fx:id="tf_grupa" layoutX="400.0" layoutY="200.0" />
+      <Button fx:id="btn_add" layoutX="26.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#actionInsert" prefHeight="25.0" prefWidth="70.0" text="Dodaj" />
+      <Button fx:id="btn_clear" layoutX="414.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#actionClear" text="Wyczyść" />
+      <Button fx:id="btn_goback" layoutX="488.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#actionGoBack" text="Powrót" />
 
    </children>
 </AnchorPane>

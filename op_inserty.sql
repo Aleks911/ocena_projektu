@@ -1,36 +1,41 @@
-insert into logowanie values (1, 'kursant1', 'test', '1'); 
-insert into logowanie values (2, 'admin', 'admin', '2'); 
+#delete from kursant;
+insert into kursant values (1, 'Adam', 'Adamski', 1 , 'kursant1@op.pl','600700321','https://github.com/Adamski'); 
+
+insert into logowanie values (1, 'kursant1', 'test', '1', 1); 
+insert into logowanie values (2, 'admin', 'admin', '2', null); 
+
+insert into grupa values (null, 'D32017');
+
+insert into projekt values  (null,'Projekt 1', 'opis testowy', '2017-12-23', 1);
+
+insert into ocena values (null, 1, 1, null, null);
 
 
-
-insert into kursant values (1, 'Adam', 'Adamski', '', 'kursant1@op.pl','600700321','https://github.com/Adamski'); 
-
-insert into projekt values  ('1','Projekt 1', 'opis testowy', '2017-12-23',null);
-insert into projekt values  ('2','Projekt 2', 'opis testowy', '2017-12-24',null);
-
-select * from projekt; 
-
-select * from antural join 
-
-
-id_p  int primary key auto_increment unique,
-temat text,
-opis text,
-deadline date,
-id_gr int,
-
-id_k int primary key auto_increment unique,
-imie varchar(50) not null,
-nazwisko varchar(50),
-id_g varchar(30),
-email varchar(30) not null unique,
-telefon varchar(9),
-gh_link varchar(50)
-
+select * from projekt;
 
 SELECT 
-    k.imie, k.nazwisko, k.id_g,  temat_g, deadline_g
-FROM
-    kursant
- JOIN
-    grupa;
+        k.id_k,
+        k.imie,
+        k.nazwisko,
+        p.id_p,
+        p.temat,
+        p.deadline,
+        g.id_gr
+    FROM
+        projekt AS p
+            JOIN
+        grupa AS g ON (p.id_gr = g.id_gr)
+            JOIN
+        kursant AS k ON (g.id_gr = k.id_g);
+
+
+        
+
+select * from ocena_projektu;
+
+UPDATE ocena SET data_od = '2013-12-01' WHERE id_p = 1;
+
+select * from ocena;
+
+select * from grupa;
+select * from ocena_projektu_kursanta;

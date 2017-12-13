@@ -14,7 +14,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="t_projekty" layoutX="5.0" layoutY="47.0" prefHeight="200.0" prefWidth="589.0">
+      <TableView fx:id="t_projekty" layoutX="5.0" layoutY="47.0" maxWidth="1.7976931348623157E308" prefHeight="270.0" prefWidth="589.0">
         <columns>
           <TableColumn fx:id="t_id_p" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="t_temat" prefWidth="155.0" text="Temat" />
@@ -23,8 +23,9 @@
             <TableColumn fx:id="t_id_gr" minWidth="0.0" prefWidth="102.0" text="Grupa" />
         </columns>
       </TableView>
-      <Button fx:id="btn_dodaj" layoutX="29.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#addAction" text="Dodaj" />
-      <Button fx:id="btn_update" layoutX="228.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#editAction" opacity="0.0" text="Edytuj" />
-      <Button fx:id="btn_delete" layoutX="97.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#deleteAction" text="Usuń" />
+      <Button fx:id="btn_dodaj" layoutX="10.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#addAction" text="Dodaj" />
+      <Button fx:id="btn_refresh" layoutX="72.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#refreshAction" text="Odśwież" />
+      <Button fx:id="btn_delete" layoutX="147.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#deleteAction" text="Usuń" />
+      <Button fx:id="btn_logout" layoutX="531.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#logoutAction" text="Powrót" />
    </children>
 </AnchorPane>

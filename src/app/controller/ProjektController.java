@@ -11,14 +11,10 @@ import app.model.Projekt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-<<<<<<< HEAD
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-=======
-import javafx.scene.Node;
->>>>>>> b4a0b766ec6ad1907a61970d0825782607d3fd7f
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -52,92 +48,42 @@ public class ProjektController {
     private Button btn_dodaj;
 
     @FXML
-    private Button btn_update;
+    private Button btn_refresh;
 
     @FXML
     private Button btn_delete;
+    
+    @FXML
+    private Button btn_logout;
 
 
     
   public ObservableList<Projekt> dane = FXCollections.observableArrayList();
   PreparedStatement ps;
   DBConnector db;
-  Connection conn;
   Stage stage;
   int id_selected;
-    
+  Parent addProjekt;
+  Parent parent;  
     
     
     @FXML
     void addAction(MouseEvent event) {
-    	
+      	    	Stage logStage = new Stage();
+      			try {
+      				addProjekt = (Parent) FXMLLoader.load(getClass().getResource("/app/view/AddProjektView.fxml"));
+      			} catch (IOException e) {
+      				e.printStackTrace();
+      			}
+      			Scene scene = new Scene(addProjekt);
+      			logStage.setScene(scene);
+      			logStage.setTitle("Dodaj projekt");
+      			logStage.show();
+      	    }
 
-      		try {
-    			Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/addProjektView.fxml"));
-    			Scene scene = new Scene(parent);
-    			stage.setScene(scene);
-    			stage.setTitle("Dodaj projekt");
-
-    			stage.show();
-    			
-    		} catch (IOException e) {
-    			e.printStackTrace();
-    	}
-    
-      		
-      		
-
-    	if(!t_id_p.getText().equals("")) {
-        	DBConnector db = new DBConnector();
-        	Connection conn =db.connInit();
-        	try {
-    			ps = conn.prepareStatement("insert into projekt values (null, ?);");
-    			ps.setString(1, t_id_p.getText());
-    		} catch (SQLException e) {
-    			e.printStackTrace();
-    		}
-    	
-        	} else {
-        		Alert a = new Alert(AlertType.ERROR);
-    			a.setTitle("B³¹d dodawaniu grupy");
-    			a.setHeaderText("Nazwa grupy nie mo¿e byæ pusta");
-    			a.showAndWait();
-        	}
-
-    	
-
-    }
-
-    	
-    	
-    	
-//    	if(!t_id_p.getText().equals("")) {
-//        	DBConnector db = new DBConnector();
-//        	Connection conn =db.connInit();
-//        	try {
-//    			ps = conn.prepareStatement("insert into projekt values (null, ?);");
-//    			ps.setString(1, t_id_p.getText());
-//    		} catch (SQLException e) {
-//    			e.printStackTrace();
-//    		}
-//    	
-//        	} else {
-//        		Alert a = new Alert(AlertType.ERROR);
-//    			a.setTitle("B³¹d dodawaniu grupy");
-//    			a.setHeaderText("Nazwa grupy nie mo¿e byæ pusta");
-//    			a.showAndWait();
-//        	}
-
-    	
-    	
-    	
-    	
-    	
   
     
-    
-    
-    
+      		
     @FXML
     void deleteAction(MouseEvent event) {
     	try {
@@ -169,10 +115,12 @@ public class ProjektController {
 
     }
     
+    Connection conn;
     private void connection() {
+ 		DBConnector db = new DBConnector();
  		db = new DBConnector();
  		conn = db.connInit();
-     }
+ 	}
     
     
     private void select() {
@@ -191,7 +139,7 @@ public class ProjektController {
     					rs.getInt("id_gr")));
     	}
     	
-//    	wpisujemy vartoœci do obiektów kolumn tabeli
+//    	wpisujemy wartoœci do obiektów kolumn tabeli
     	t_id_p.setCellValueFactory(new PropertyValueFactory<Projekt,Integer>("id_p"));
     	t_temat.setCellValueFactory(new PropertyValueFactory<Projekt,String>("temat"));
     	t_opis.setCellValueFactory(new PropertyValueFactory<Projekt,String>("opis"));
@@ -210,15 +158,38 @@ public class ProjektController {
     	}
     
     
-    public void initialize() {
+    @FXML
+    void refreshAction(MouseEvent event) {
     	select();
     }
     
     
     @FXML
-    void closegrAction(MouseEvent event) {
+    void logoutAction(MouseEvent event) {
     	((Node)(event.getSource())).getScene().getWindow().hide();
+//     	Stage logStage = new Stage();
+//    		try {
+//    			parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/LoginView.fxml"));
+//
+//    		} catch (IOException e) {
+//    			e.printStackTrace();
+//    		}
+//    		Scene scene = new Scene(parent);
+//    		logStage.setScene(scene);
+//    		logStage.setTitle("Panel logowania");
+//    		logStage.show();
+
     }
+    
+    public void initialize() {
+    	select();
+    }
+    
+    
+//    @FXML
+//    void closegrAction(MouseEvent event) {
+//    	((Node)(event.getSource())).getScene().getWindow().hide();
+//    }
     
 
 }

@@ -2,35 +2,22 @@ package app.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-<<<<<<< HEAD
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import app.database.DBConnector;
 import app.model.Projekt;
-=======
-import java.sql.SQLException;
-
 import app.database.DBConnector;
->>>>>>> b4a0b766ec6ad1907a61970d0825782607d3fd7f
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-<<<<<<< HEAD
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-package add.controller;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-
-=======
-import javafx.scene.input.MouseEvent;
-
-public class addProjektController {
+public class AddProjektController {
 
     @FXML
     private TextField tf_temat;
@@ -42,8 +29,16 @@ public class addProjektController {
     private TextField tf_deadline;
 
     @FXML
-
     private TextField tf_grupa;
+
+    @FXML
+    private Button btn_add;
+
+    @FXML
+    private Button btn_clear;
+
+    @FXML
+    private Button btn_goback;
 
     
     @FXML
@@ -52,6 +47,7 @@ public class addProjektController {
     	ta_opis.clear();
     	tf_temat.clear();
     	tf_deadline.clear();
+    	tf_grupa.clear();
     }
 
     @FXML
@@ -60,7 +56,6 @@ public class addProjektController {
     	tf_temat.getText();
     	ta_opis.getText();
     	tf_deadline.getText();
-
     	tf_grupa.getText();
 
     	
@@ -74,11 +69,11 @@ public class addProjektController {
 			ps.setString(1, tf_temat.getText());
 	    	ps.setString(2, ta_opis.getText());
 	    	ps.setString(3, tf_deadline.getText());
-
 	    	ps.setString(4, tf_grupa.getText());
-
-
 	    	ps.executeUpdate();
+	    	
+	    	System.out.println();
+	    	
 //	    	czyszczenie okna pod wys³aniu ankiety
 	    	ActionEvent ae = new ActionEvent();
 	    	clearAction(ae);
@@ -88,12 +83,29 @@ public class addProjektController {
 			}
 
     }
-    	
-     private void select() {
-    	connection();
-    	dane.clear();
-    	t_projekty.setItems(dane);
-//    	try {
+    
+    
+    @FXML
+    void actionGoBack(MouseEvent event) {
+    	((Node)(event.getSource())).getScene().getWindow().hide();
+    }
+
+
+    @FXML
+    void actionRefresh(MouseEvent event) {
+    	select();
+    }
+    
+    
+    
+    
+    
+//     private void select() {
+//    	connection();
+//    	String dane;
+//    	dane.clear();
+//    	t_projekty.setItems(dane);
+////    	try {
 //    	ps = conn.prepareStatement("SELECT * FROM projekt;");
 //        ResultSet rs = ps.executeQuery();
 //    	while(rs.next()) {
@@ -121,25 +133,38 @@ public class addProjektController {
 //    	}
     	
     	
-    	}
-    
+    	
+    Connection conn;
     
     private void connection() {
+    	
+       		DBConnector db = new DBConnector();
+     		db = new DBConnector();
+     		conn = db.connInit();
+     	}
+    	
 
-    	
-    	
-    }
 
 	private void clearAction(ActionEvent ae) {
 
-		// TODO Auto-generated method stub
 		
 	}
 
-
-	public void initialize() {
-    	select();
-    }
-
-
+	
+	   private void select() {
+	    	connection();
+	    	    	}
+	    
+	    public void initialize() {
+	    	select();
+	    }
+	    	
+	
+	
+	
+	
+	
+	
+	
+	
 }
