@@ -71,11 +71,14 @@ public class ListaKursantow {
 		((Node)(event.getSource())).getScene().getWindow().hide();
     }
     
-    static int id_selected;
+  static int id_selected;
+  static int ids;
+  
     
     @FXML
     void correctAction(MouseEvent event) throws IOException {
     	id_selected = t_kursanci.getSelectionModel().getSelectedItem().getId_k();
+    	ids = t_kursanci.getSelectionModel().getSelectedItem().getId_k();
     	System.out.println(id_selected);
     	Stage stage = new Stage();
     	Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/EdytowanieKursantowView.fxml"));
@@ -95,8 +98,11 @@ public class ListaKursantow {
     	DBConnector db = new DBConnector();
     	conn = db.connInit();
     	System.out.println(id_selected);
+    	//ps = conn.prepareStatement("delete from logowanie where id_k=?");
+    	//ps.setInt(1, ListaKursantow.id_selected);
+    	//ps.executeUpdate();
     	ps = conn.prepareStatement("delete from kursant where id_k=?");
-    	ps.setInt(1, ListaKursantow.id_selected);			
+    	ps.setInt(1, id_selected);			
 		ps.executeUpdate();
 		Stage stage = new Stage();
     	Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/ListaKursantowView.fxml"));
@@ -110,6 +116,7 @@ public class ListaKursantow {
 
     @FXML
     void rateAction(MouseEvent event) throws IOException {
+    	id_selected = t_kursanci.getSelectionModel().getSelectedItem().getId_k();
     	Stage stage = new Stage();
     	Parent parent = (Parent) FXMLLoader.load(getClass().getResource("/app/view/RateView.fxml"));
 		Scene scene = new Scene(parent);

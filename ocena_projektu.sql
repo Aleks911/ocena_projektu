@@ -54,7 +54,7 @@ FOREIGN KEY (id_p) REFERENCES projekt(id_p),
 CONSTRAINT FK_id_k FOREIGN KEY (id_k)
         REFERENCES kursant (id_k)
         ON UPDATE CASCADE ON DELETE CASCADE
-
+FOREIGN KEY (id_k) REFERENCES kursant(id_k) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 create view ocena_projektu as
