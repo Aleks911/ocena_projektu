@@ -20,8 +20,12 @@ login varchar(50),
 haslo varchar(50),
 permission varchar(1),
 id_k int,
-FOREIGN KEY (id_k) REFERENCES kursant(id_k)
+CONSTRAINT FK_id_k FOREIGN KEY (id_k)
+        REFERENCES kursant (id_k)
+        ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+
 
 
 create table grupa(
@@ -45,7 +49,7 @@ id_o int primary key auto_increment,
 id_p int,
 id_k int,
 data_od date,
-ocena varchar(1),
+ocena varchar(2),
 FOREIGN KEY (id_p) REFERENCES projekt(id_p),
 FOREIGN KEY (id_k) REFERENCES kursant(id_k)
 );
