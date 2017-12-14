@@ -18,7 +18,7 @@ create table logowanie(
 id_u int primary key auto_increment unique,
 login varchar(50),
 haslo varchar(50),
-permission varchar(1),
+permission varchar(2),
 id_k int,
 CONSTRAINT FK_id_k FOREIGN KEY (id_k)
         REFERENCES kursant (id_k)
@@ -51,7 +51,10 @@ id_k int,
 data_od date,
 ocena varchar(2),
 FOREIGN KEY (id_p) REFERENCES projekt(id_p),
-FOREIGN KEY (id_k) REFERENCES kursant(id_k)
+CONSTRAINT FK_id_k FOREIGN KEY (id_k)
+        REFERENCES kursant (id_k)
+        ON UPDATE CASCADE ON DELETE CASCADE
+
 );
 
 create view ocena_projektu as
