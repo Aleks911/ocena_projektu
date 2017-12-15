@@ -62,8 +62,8 @@ public class DodawanieKursantow {
 				ps.setString(3, tf_grupa.getText());				
 				ps.setString(4, tf_mail.getText());
 				ps.setString(5, tf_tel.getText());
-				ps.setString(6, tf_git.getText());				
-							
+				ps.setString(6, tf_git.getText());	
+				
 				ps.executeUpdate();    	    	
     	    	
     	    } else {

@@ -1,6 +1,11 @@
 Projekt aplikacji do oceniania projektów wykonanych przez kursantów. 
 
+
 Program został napisany w celu poprawienia organizacji pracy oraz ułatwienia wymiany informacji pomiędzy trenerem a uczestnikami kursu w zakresie projektów zaliczeniowych realizowanych w ramach kursu. 
+
+Program został napisany w celu poprawienia organizacji pracy oraz ułatwienia wymiany informacji pomiędzy trenerem a uczestnikami kursu w zakresie projektów zaliczeniowych realizowanych w ramach kursu Back-End Developer. 
+
+
 
 Funkcjonalność: 
 1 panel logowania (username i hasło). 
@@ -17,24 +22,28 @@ Funkcjonalność:
 	- podgląd listy projektów do wykonania
 	- powiadomienie trenera o wysłaniu danego projektu do oceny. 
 	- zmianę hasła do swojego konta
-	
 
-	
 Uruchomienie: 
 Ściągnąć repozytorium na dysk. 
 Po rozpakowaniu, otworzyć pliki ocena_projektu.sql i op_inserty.sql w aplikacji do MySQL (np. MySQL Workbench). 
 Wykonać polecenia z pliku ocena_projektu.sql by utworzyć bazę danych i tabele. Z pliku op_inserty.sql wykonać polecenia insertów.
+
 Zaimportować projekt do dowolnego środowiska JAVA IDE (Eclipse, InteliJ) i uruchhomić program. 
 
 Repozytorium zawiera również plik wykonywalny uruchamiany z poziomu systemu operacyjnego [PODAĆ ===== NAZWE ======= PLIKU]
+
+Zaimportować projekt do dowolnego środowiska JAVA IDE (Eclipse, InteliJ) i uruchhomić program (program w wersji JAVA 8). 
+
 
 Przykładowe konta do logowania w aplikacji: 
 Trener: username: "admin", pass: "admin"
 Kursant: username: "kursant1", pass "test"  
 
 
+
 Projekt wykonali: 
 Aneta Zolech<br>
 Aleksander Rotnicki<br>
 Dariusz Górniakowski<br>
-Marcin Hoinka <br>
+Marcin Hoinka <br> 
+

@@ -102,3 +102,15 @@ SELECT
         ocena AS o ON (k.id_k = o.id_k)
         ;
 
+
+create trigger logowanie
+after insert on kursant
+for each row
+insert into logowanie set id_k = new.id_k, login = new.gh_link, permission='1', haslo = '123';
+
+#drop trigger projekt;
+
+#create trigger projekt
+#after insert on projekt
+#for each row
+#insert into ocena set id_k = (select id_k from kursant where id_g = (select id_gr from projekt where id_p = new.id_p)), id_p = new.id_p;
