@@ -1,16 +1,9 @@
-#delete from kursant;
-insert into kursant values (1, 'Adam', 'Adamski', 1 , 'kursant1@op.pl','600700321','https://github.com/Adamski'); 
-
-insert into logowanie values (1, 'kursant1', 'test', '1', 1); 
-insert into logowanie values (2, 'admin', 'admin', '2', null); 
-
 insert into grupa values (null, 'D32017');
 insert into grupa values (null, 'D42017');
 insert into grupa values (null, 'D52017');
 
 insert into kursant values (null, 'Adam', 'Adamski', 1 , 'kursant1@op.pl','600700321','Adamski1'); 
 insert into kursant values (null, 'Adam', 'Adamski', 2 , 'kursant2@op.pl','600700321','Adamski2'); 
-insert into kursant values (null, 'Adam', 'Adamski', 3 , 'kursant3@op.pl','600700321','Adamski3'); 
 
 
 insert into logowanie values (null, 'kursant1', 'test', '1', 1); 

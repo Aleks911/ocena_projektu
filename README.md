@@ -34,10 +34,7 @@ Kursant: username: "kursant1", pass "test"
 
 
 Projekt wykonali: 
-Aneta Zolech
-Aleksander Rotnicki
-Dariusz Górniakowski
-Marcin Hoinka
-
-
-
+Aneta Zolech<br>
+Aleksander Rotnicki<br>
+Dariusz Górniakowski<br>
+Marcin Hoinka <br>
