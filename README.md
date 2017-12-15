@@ -30,7 +30,7 @@ Wykonać polecenia z pliku ocena_projektu.sql by utworzyć bazę danych i tabele
 
 Zaimportować projekt do dowolnego środowiska JAVA IDE (Eclipse, InteliJ) i uruchhomić program. 
 
-Repozytorium zawiera również plik wykonywalny uruchamiany z poziomu systemu operacyjnego [PODAĆ ===== NAZWE ======= PLIKU]
+Repozytorium zawiera również plik wykonywalny uruchamiany z poziomu systemu operacyjnego "ocena_projektów.jar"
 
 Zaimportować projekt do dowolnego środowiska JAVA IDE (Eclipse, InteliJ) i uruchhomić program (program w wersji JAVA 8). 
 
